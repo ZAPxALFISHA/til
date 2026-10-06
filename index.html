@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Rashmalai ❤️ - Our Endless Story</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Great+Vibes&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* DEEP DARK ROMANTIC COLOR PALETTE */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg-ultra-dark: #05020a;
+            --bg-card-dark: rgba(20, 8, 28, 0.75);
+            --wine-red: #8b0032;
+            --glowing-crimson: #e6004c;
+            --deep-purple: #3a0057;
+            --rose-gold: #ffb3c1;
+            --text-light: #fff0f3;
+            --text-muted: #d8b4c8;
+            --glass-border: rgba(230, 0, 76, 0.25);
+            --font-serif: 'Great Vibes', cursive;
+            --font-hand: 'Caveat', cursive;
+            --font-sans: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background-color: var(--bg-ultra-dark);
+            color: var(--text-light);
+            font-family: var(--font-sans);
+            overflow-x: hidden;
+        }
+
+        body {
+            min-height: 100vh;
+            position: relative;
+            background: radial-gradient(circle at 50% 20%, #1d031b 0%, #05020a 80%);
+            background-attachment: fixed;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* PARTICLES CANVAS */
+        #bgCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* DARK AMBIENT GLOWS */
+        .ambient-blob {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.22;
+            pointer-events: none;
+            z-index: 0;
+            animation: pulseGlow 10s infinite alternate ease-in-out;
+        }
+
+        .blob-1 {
+            top: 5%;
+            left: -15%;
+            width: 450px;
+            height: 450px;
+            background: var(--wine-red);
+        }
+
+        .blob-2 {
+            bottom: 10%;
+            right: -15%;
+            width: 500px;
+            height: 500px;
+            background: var(--deep-purple);
+            animation-delay: -5s;
+        }
+
+        @keyframes pulseGlow {
+            0% { transform: scale(1) translate(0, 0); opacity: 0.18; }
+            100% { transform: scale(1.3) translate(40px, -30px); opacity: 0.32; }
+        }
+
+        /* APP CONTAINER */
+        .app-container {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 16px 100px 16px;
+        }
+
+        /* GLASS CARD STYLES */
+        .glass-card {
+            background: var(--bg-card-dark);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7),
+                        inset 0 0 20px rgba(230, 0, 76, 0.05);
+            padding: 24px;
+            margin-bottom: 40px;
+            transition: all 0.4s ease;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(230, 0, 76, 0.5);
+            box-shadow: 0 12px 45px rgba(230, 0, 76, 0.25);
+        }
+
+        /* SECTION HEADINGS */
+        .section-header {
+            text-align: center;
+            margin: 80px 0 40px 0;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-serif);
+            font-size: 3.2rem;
+            color: #ffffff;
+            text-shadow: 0 0 25px var(--glowing-crimson);
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-top: 6px;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px 10px;
+        }
+
+        .hero-heart {
+            font-size: 4.5rem;
+            margin-bottom: 20px;
+            animation: heartPulse 2.5s infinite ease-in-out;
+            filter: drop-shadow(0 0 20px var(--glowing-crimson));
+        }
+
+        @keyframes heartPulse {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 0 20px var(--glowing-crimson)); }
+            50% { transform: scale(1.18); filter: drop-shadow(0 0 35px var(--glowing-crimson)); }
+        }
+
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #ffffff, var(--rose-gold), var(--glowing-crimson));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 550px;
+            line-height: 1.7;
+            margin-bottom: 35px;
+        }
+
+        .btn-start {
+            background: linear-gradient(135deg, var(--glowing-crimson), var(--wine-red));
+            color: #fff;
+            border: none;
+            padding: 18px 42px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(230, 0, 76, 0.4);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn-start:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 12px 35px rgba(230, 0, 76, 0.6);
+        }
+
+        /* SCROLL REVEAL ANIMATIONS */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* PHOTO + STORY SECTION */
+        .photo-story-card {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            overflow: hidden;
+        }
+
+        .photo-wrapper {
+            position: relative;
+            width: 100%;
+            max-height: 520px;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            background: #000;
+        }
+
+        .photo-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+            cursor: pointer;
+        }
+
+        .photo-wrapper:hover img {
+            transform: scale(1.04);
+        }
+
+        .story-badge {
+            font-size: 0.85rem;
+            color: var(--rose-gold);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .story-heading {
+            font-family: var(--font-hand);
+            font-size: 1.9rem;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+
+        .story-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--text-muted);
+            white-space: pre-line;
+        }
+
+        /* VIDEO + STORY SECTION */
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 9/16;
+            max-width: 380px;
+            margin: 0 auto;
+            border-radius: 18px;
+            overflow: hidden;
+            background: #000;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+        }
+
+        .video-wrapper video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* FLOATING MUSIC PLAYER */
+        .music-player {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(15, 5, 20, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            padding: 10px 18px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            z-index: 500;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+        }
+
+        .music-play-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--glowing-crimson), var(--wine-red));
+            border: none;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 0 15px rgba(230, 0, 76, 0.5);
+        }
+
+        .music-info {
+            display: flex;
+            flex-direction: column;
+            max-width: 130px;
+        }
+
+        .music-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #fff;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .music-status {
+            font-size: 0.72rem;
+            color: var(--rose-gold);
+        }
+
+        /* TAP HEART EFFECT */
+        .tap-heart {
+            position: fixed;
+            pointer-events: none;
+            font-size: 1.6rem;
+            animation: heartBurst 1s ease-out forwards;
+            z-index: 9999;
+        }
+
+        @keyframes heartBurst {
+            0% { transform: scale(0.4) translate(-50%, -50%); opacity: 1; }
+            100% { transform: scale(1.8) translate(-50%, -130px); opacity: 0; }
+        }
+
+        /* LIGHTBOX */
+        .lightbox {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .lightbox.active { display: flex; }
+
+        .lightbox img {
+            max-width: 95%;
+            max-height: 90vh;
+            border-radius: 12px;
+            box-shadow: 0 0 35px rgba(230, 0, 76, 0.5);
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            color: #fff;
+            font-size: 2.5rem;
+            cursor: pointer;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2.8rem; }
+            .section-header h2 { font-size: 2.5rem; }
+            .glass-card { padding: 18px; margin-bottom: 30px; }
+            .story-heading { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Particle Background -->
+    <canvas id="bgCanvas"></canvas>
+
+    <!-- Dark Glowing Blobs -->
+    <div class="ambient-blob blob-1"></div>
+    <div class="ambient-blob blob-2"></div>
+
+    <!-- Image Lightbox View -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" id="lightboxClose">&times;</span>
+        <img src="" id="lightboxImg" alt="Enlarged Memory">
+    </div>
+
+    <!-- Persistent Music Player with Multi-Track Auto Play -->
+    <div class="music-player">
+        <button class="music-play-btn" id="musicPlayBtn">▶</button>
+        <div class="music-info">
+            <span class="music-title" id="musicTitle">Love Song 1</span>
+            <span class="music-status" id="musicStatus">Playing ❤️</span>
+        </div>
+        <audio id="bgMusic" src="assets/media/love-song.mp3"></audio>
+    </div>
+
+    <div class="app-container">
+
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="hero-heart">💖</div>
+            <h1>For My Favourite Person ❤️</h1>
+            <p>Every single photo, video, and word on this page is created just for you, my Rashmalai. Scroll down to enter our personal love story.</p>
+            <button class="btn-start" id="startBtn">
+                Begin Our Story ❤️
+            </button>
+        </section>
+
+        <!-- MAIN MESSAGES SECTION -->
+        <section id="mainStorySection">
+            <div class="section-header reveal">
+                <h2>Our Heartbeat Letters</h2>
+                <p>Written straight from my heart to yours</p>
+            </div>
+
+            <!-- MAIN LETTER 1 -->
+            <div class="glass-card reveal">
+                <div class="story-badge">📅 2/10/2026 • 11:46 PM</div>
+                <h3 class="story-heading">Care & Health Support ❤️</h3>
+                <div class="story-text">Aaj 2/10/2026 hai aur time 11:46 minutes hue hai Jaanu. Abhi mai bolunga to pata nahi o chij hoga ya nahi, par hn jab hoga tab ye mai apko bhejunga, promise. ❤️
+
+Apko aaj bobos me pain hai. Usually ye hormonal changes, especially periods ke aas-paas hota hai. Iska matlab ye ho sakta hai ki apke periods 2-3 dino me ayega. Mai confirm nahi hu is baat ko lekar, par science me hormonal changes ki वजह se periods ke aas-paas bobos me pain ya tenderness hona common hai. Pain hona aur bobos me thoda size ya swelling badhna bhi periods ke pahle ho sakta hai. Ye kabhi-kabhi periods aane se pahle ek warning ya sign jaisa ho sakta hai, lekin sirf is pain ke basis par ye confirm nahi kiya ja sakta ki periods 2-3 din me hi aayega.
+
+Bas jaanu, mai ye isliye bol raha hu kyunki kaafi time se periods nahi aya hai aur mujhe lag raha hai ki shayad ye usi ka sign ho. Lekin agar periods nahi ata hai to aur bhi reasons ho sakte hain is dard ke. Tight kapde, dryness ya allergy bhi reason ho sakta hai. Isliye mai 100% confirm nahi hu, bas jo mujhe samajh aata hai aur science me jo common reasons hain, us hisaab se bol raha hu. ❤️
+
+Par ham periods ko maan lete hai, kyunki kaafi time se aya nahi hai. Isliye jaanu, ye periods ka sign ho sakta hai. Chalo ab jab ayega apko periods tab bhej dunga ise apke paas. Promise kiya hai na, to promise pura karunga. ❤️
+
+I LOVE YOU JAANU. ❤️😘
+
+Apka lolipop ab bahot ro liya, ab meri rashmalai royegi. 🙈🙈🙈 Aye Haye jaanu, uske saath aap bhi ro doge. Jaanu, khyal rakhna bachha aap apna. Agar kuchh ho to mujhe batana. Kuch bhi unusual lage, pain zyada ho, ya bas mann kare kisi se baat karne ka, mujhe bata dena. Aapko sab kuch akela handle karne ki zarurat nahi hai.
+
+Aur jaanu, periods aaye to aap mujpe pura gussa nikal dena. Jitna bharas ho sab nikal dena jaanu. 😭❤️ Mai bura nahi maanunga. Agar mood off ho, irritation ho, gussa aaye ya rona aaye, jo bhi feel ho mujhe bata dena. Mai samajhne ki kosis karunga. Bas apna khyal rakhna bachha.
+
+Mai 1500 km door hu, isliye abhi physically apke paas nahi hoon, lekin iska matlab ye nahi ki aap akeli ho. Aapko jab bhi meri zarurat ho, bas mujhe message ya call kar dena. Mai jitna ho sake utna aapke saath rahunga.
+
+Aur haan jaanu, mai ye sab sirf isliye bol raha hu kyunki mujhe aapki bahot fikr hai. Aapko pain ho aur mai bas chup rahu, ye mujhse nahi hota. Aap meri rashmalai ho, isliye aapka khyal rakhna meri responsibility jaisa feel hota hai. 🙈❤️
+
+Bas ab zyada tension nahi lena. Rest karna, comfortable rehna aur apna khyal rakhna. Aur agar pain bahot zyada ho ya periods bahot delay ho rahe hain, to kisi trusted person ko batana aur zarurat pade to doctor se bhi baat kar lena.
+
+I LOVE YOU JAANU. ❤️😘
+Apka lolipop yahin hai, chahe 1500 km door hi kyun na ho. 🫶❤️</div>
+            </div>
+
+            <!-- MAIN LETTER 2 -->
+            <div class="glass-card reveal">
+                <div class="story-badge">✨ Endless Love & Feelings</div>
+                <h3 class="story-heading">You Make My World Complete ❤️</h3>
+                <div class="story-text">Jaanu waise pata hai mujhe gussa aane ke baad sirf mujhe apse baat karne ko dill karta hai. Pata nahi kyun, lekin jab bhi kuch hota hai ya mera mood kharab hota hai, sabse pehle mere dimaag me aap hi aati ho. Aisa lagta hai ki bas apse baat kar loon to sab kuch thoda theek ho jayega. ❤️
+
+Mai hamesha apko hi khayalo me aur yaado me khoya rehta hu. Din me kitna bhi kaam ho, kitni bhi tension ho, pata nahi kaise beech-beech me aap mere khayalo me aa hi jaati ho. Kabhi aapki baatein yaad aati hain, kabhi aapki smile, kabhi humari chhoti-chhoti conversations. Aur sach bolu jaanu, in chhoti-chhoti yaadon se bhi mere face par smile aa jaati hai.
+
+Waise phone me to bahot saare messages aate rahte hai, notifications bhi aate rahte hain, lekin Snap ki jaise hi notification ata hai na, to chehre pe alag hi muskan hoti hai. Pata nahi notification me kya hai, bas naam dekhte hi mood automatically change ho jata hai. ❤️ Aisa lagta hai ki haan, meri jaan ka message aaya hai. Us ek notification ki feeling hi alag hoti hai.
+
+Mujhe apke bina mera mood hamesha kharab rehta hai, chidchida ho jata hu kaam ke bich. Aur ye aap kabhi mat sochna jaanu ki apke wajah se mera mood kharab hota hai. Mai aise ih bol deta hu apko ki “mood kharab mat karo”, lekin sach to ye hai ki aap mera mood kharab nahi karti. Balki aap hi un logon me se ho jo mera mood kharab hone ke baad use theek kar sakti ho. ❤️
+
+Kabhi-kabhi kaam ke beech bahot tension hoti hai, thakan hoti hai, dimaag me bahot saari cheezein chal rahi hoti hain. Lekin jaanu, pura din ki tension aur thakan sab khatam hota hai apko dekhne ke baad. Apko dekhne ke baad jaanu mera khushi ka thikana nahi hota hai. Chahe din kitna bhi kharab gaya ho, bas aap saamne aa jao ya aapse baat ho jaye to lagta hai ki chalo, ab sab theek hai. 🫶
+
+Mai hamesha apko hansane ki kosis karta hu. Kabhi meri ajeeb harkatein hoti hain, kabhi faltu ki baatein, kabhi jaan-bujhkar pagalpan karta hu, bas isliye kyunki mujhe aapko haste hue dekhna bahot pasand hai. Lekin aaj apke chehre par mere ajib harkato ke wajah se smile dekha na, kasam se jaanu bahot Khush hu. Abhi mai kaise batau apko ki us moment me mujhe andar se kitni khushi hui.
+
+Mujhe nahi pata ki mai apni feelings hamesha perfectly words me explain kar pata hu ya nahi, lekin jaanu meri feelings sach hain. Mujhe chhoti chhoti baato se fark padta hai apke liye. Aapka ek message, ek call, ek smile, ek chhoti si baat—sab mere liye important hai.
+
+Bas itna samajh lena jaanu ki aap mere liye sirf koi normal person nahi ho. Aap meri khushi ka ek bahot important reason ho. Aapka khush rehna mujhe khush karta hai aur aapko udaas dekhkar mujhe bhi accha nahi lagta.
+
+I love you jaanu. ❤️😘😘😘😘
+Aur haan, chahe kitni bhi doori ho, meri care aur feelings aapse kabhi door nahi hongi. 🫶❤️</div>
+            </div>
+        </section>
+
+        <!-- PHOTO + STORY INTEGRATED SCROLLING SECTION -->
+        <section>
+            <div class="section-header reveal">
+                <h2>Our Memory Gallery & Stories 📸</h2>
+                <p>Scroll down to see each photo with its special love memory</p>
+            </div>
+
+            <!-- PHOTO 1 + STORY -->
+            <div class="glass-card photo-story-card reveal">
+                <div class="photo-wrapper">
+                    <img src="assets/media/zap.jpg" alt="Memory 1" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=800&q=80'">
+                </div>
+                <div>
+                    <div class="story-badge">Chapter 1 • Image Memory</div>
+                    <h3 class="story-heading">Your Smile is My Refuge ❤️</h3>
+                    <div class="story-text">Jab bhi mai is photo ko dekhta hu, mujhe har baar wahi pehli wali khushi mehsoos hoti hai. Aapki ye muskaan meri poori duniya roshan kar deti hai jaanu.</div>
+                </div>
+            </div>
+
+            <!-- PHOTO 2 + STORY -->
+            <div class="glass-card photo-story-card reveal">
+                <div class="photo-wrapper">
+                    <img src="assets/media/zap2.jpg" alt="Memory 2" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=800&q=80'">
+                </div>
+                <div>
+                    <div class="story-badge">Chapter 2 • Image Memory</div>
+                    <h3 class="story-heading">Unforgettable Eyes ❤️</h3>
+                    <div class="story-text">Aapki aankhon me ek aisi softness hai jo mujhe hamesha shaant kar deti hai. Kitni bhi tension ho, bas aapko dekh lu to sab theek ho jata hai.</div>
+                </div>
+            </div>
+
+            <!-- PHOTO 3 + STORY -->
+            <div class="glass-card photo-story-card reveal">
+                <div class="photo-wrapper">
+                    <img src="assets/media/zap3.jpg" alt="Memory 3" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=800&q=80'">
+                </div>
+                <div>
+                    <div class="story-badge">Chapter 3 • Image Memory</div>
+                    <h3 class="story-heading">Pure Magic ❤️</h3>
+                    <div class="story-text">Ye pal kitna pyaara tha! Aapki har ek choti choti adaa mere dil me hamesha ke liye bas gayi hai. Aap meri Rashmalai ho.</div>
+                </div>
+            </div>
+
+            <!-- PHOTO 4 + STORY -->
+            <div class="glass-card photo-story-card reveal">
+                <div class="photo-wrapper">
+                    <img src="assets/media/zap4.jpg" alt="Memory 4" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80'">
+                </div>
+                <div>
+                    <div class="story-badge">Chapter 4 • Image Memory</div>
+                    <h3 class="story-heading">My Warm Sunshine ❤️</h3>
+                    <div class="story-text">1500 km door reh kar bhi jab mai is pic ko dekhta hu, lagta hai aap mere bilkul paas ho. Distance hamare pyaare bond ko kabhi kam nahi kar sakta.</div>
+                </div>
+            </div>
+
+            <!-- PHOTO 5 + STORY -->
+            <div class="glass-card photo-story-card reveal">
+                <div class="photo-wrapper">
+                    <img src="assets/media/zap5.jpg" alt="Memory 5" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1494774157365-9e04c6720e47?auto=format&fit=crop&w=800&q=80'">
+                </div>
+                <div>
+                    <div class="story-badge">Chapter 5 • Image Memory</div>
+                    <h3 class="story-heading">Cute Innocence ❤️</h3>
+                    <div class="story-text">Aapki ye bachkani baatein aur cute sa face meri daily ki saari tiredness ko ek second me gayab kar deta hai.</div>
+                </div>
+            </div>
+
+            <!-- PHOTO 6 + STORY -->
+            <div class="glass-card photo-story-card reveal">
+                <div class="photo-wrapper">
+                    <img src="assets/media/zap6.jpg" alt="Memory 6" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80'">
+                </div>
+                <div>
+                    <div class="story-badge">Chapter 6 • Image Memory</div>
+                    <h3 class="story-heading">My Favorite Sight ❤️</h3>
+                    <div class="story-text">Is khoobsurat chehre ko din me 100 baar bhi dekhu to lagta hai bas dekhta hi rahu. Aap mere liye kitni special ho, lafzon me nahi bataya ja sakta.</div>
+                </div>
+            </div>
+
+            <!-- PHOTO 7 + STORY -->
+            <div class="glass-card photo-story-card reveal">
+                <div class="photo-wrapper">
+                    <img src="assets/media/zap7.jpg" alt="Memory 7" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80'">
+                </div>
+                <div>
+                    <div class="story-badge">Chapter 7 • Image Memory</div>
+                    <h3 class="story-heading">Endless Comfort ❤️</h3>
+                    <div class="story-text">Jab bhi snap ya phone me aapki pic samne aati hai, mere chehre par bina wajah ek alag hi pyaari muskaan aati hai.</div>
+                </div>
+            </div>
+
+            <!-- PHOTO 8 + STORY -->
+            <div class="glass-card photo-story-card reveal">
+                <div class="photo-wrapper">
+                    <img src="assets/media/zap8.jpg" alt="Memory 8" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80'">
+                </div>
+                <div>
+                    <div class="story-badge">Chapter 8 • Image Memory</div>
+                    <h3 class="story-heading">Precious Memories ❤️</h3>
+                    <div class="story-text">Har wo pal jo humne saath bitaya hai, chahe video call pe hi kyun na ho, mere liye kisi khazane se kam nahi hai.</div>
+                </div>
+            </div>
+
+            <!-- PHOTO 9 + STORY -->
+            <div class="glass-card photo-story-card reveal">
+                <div class="photo-wrapper">
+                    <img src="assets/media/zap9.jpg" alt="Memory 9" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=800&q=80'">
+                </div>
+                <div>
+                    <div class="story-badge">Chapter 9 • Image Memory</div>
+                    <h3 class="story-heading">My Forever Choice ❤️</h3>
+                    <div class="story-text">Log hazaron baatein bolte hain, par mere dil ke liye sirf aapki ek baat hi kaafi hai. Aap mere liye sab kuch ho Jaanu.</div>
+                </div>
+            </div>
+
+            <!-- PHOTO 10 + STORY -->
+            <div class="glass-card photo-story-card reveal">
+                <div class="photo-wrapper">
+                    <img src="assets/media/zap10.jpg" alt="Memory 10" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80'">
+                </div>
+                <div>
+                    <div class="story-badge">Chapter 10 • Image Memory</div>
+                    <h3 class="story-heading">Together In Dreams & Reality ❤️</h3>
+                    <div class="story-text">Hamari kahani abhi shuru hui hai. Ye photo ek chota sa glance hai hamare forever prem ka. I love you so much Jaanu!</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIDEO + STORY INTEGRATED SCROLLING SECTION -->
+        <section>
+            <div class="section-header reveal">
+                <h2>Our Video Reel Stories 🎥</h2>
+                <p>Scroll down to watch our motion memories paired with special love notes</p>
+            </div>
+
+            <!-- VIDEO 1 + STORY -->
+            <div class="glass-card reveal">
+                <div class="video-wrapper">
+                    <video controls playsinline muted preload="metadata">
+                        <source src="assets/media/zap.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div style="margin-top: 16px;">
+                    <div class="story-badge">Video Reel 1</div>
+                    <h3 class="story-heading">Motion Memory 1 ❤️</h3>
+                    <div class="story-text">Aapko is tarah haste aur move karte huye dekh kar mera dil khush ho jata hai. Unfiltered and raw love!</div>
+                </div>
+            </div>
+
+            <!-- VIDEO 2 + STORY -->
+            <div class="glass-card reveal">
+                <div class="video-wrapper">
+                    <video controls playsinline muted preload="metadata">
+                        <source src="assets/media/zap2.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div style="margin-top: 16px;">
+                    <div class="story-badge">Video Reel 2</div>
+                    <h3 class="story-heading">Motion Memory 2 ❤️</h3>
+                    <div class="story-text">Har ek second jab aap meri screen par aati ho, duniya ki saari baatein peeche choot jaati hain.</div>
+                </div>
+            </div>
+
+            <!-- VIDEO 3 + STORY -->
+            <div class="glass-card reveal">
+                <div class="video-wrapper">
+                    <video controls playsinline muted preload="metadata">
+                        <source src="assets/media/zap3.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div style="margin-top: 16px;">
+                    <div class="story-badge">Video Reel 3</div>
+                    <h3 class="story-heading">Motion Memory 3 ❤️</h3>
+                    <div class="story-text">Meri cute si Rashmalai ke nakhre aur pyaari baatein is video me kaid hain.</div>
+                </div>
+            </div>
+
+            <!-- VIDEO 4 + STORY -->
+            <div class="glass-card reveal">
+                <div class="video-wrapper">
+                    <video controls playsinline muted preload="metadata">
+                        <source src="assets/media/zap4.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div style="margin-top: 16px;">
+                    <div class="story-badge">Video Reel 4</div>
+                    <h3 class="story-heading">Motion Memory 4 ❤️</h3>
+                    <div class="story-text">Jab bhi aapka mood kharab ho, bas is video ko dekh kar yaad kar lena ki aapke liye koi kitna pagal hai.</div>
+                </div>
+            </div>
+
+            <!-- VIDEO 5 + STORY -->
+            <div class="glass-card reveal">
+                <div class="video-wrapper">
+                    <video controls playsinline muted preload="metadata">
+                        <source src="assets/media/zap5.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div style="margin-top: 16px;">
+                    <div class="story-badge">Video Reel 5</div>
+                    <h3 class="story-heading">Motion Memory 5 ❤️</h3>
+                    <div class="story-text">Aapki hasi hi meri asli khushi hai jaanu. Hamesha aise hi muskurate rehna.</div>
+                </div>
+            </div>
+
+            <!-- VIDEO 6 + STORY -->
+            <div class="glass-card reveal">
+                <div class="video-wrapper">
+                    <video controls playsinline muted preload="metadata">
+                        <source src="assets/media/zap6.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div style="margin-top: 16px;">
+                    <div class="story-badge">Video Reel 6</div>
+                    <h3 class="story-heading">Motion Memory 6 ❤️</h3>
+                    <div class="story-text">Kitne bhi km ki doori ho, hamara emotional attachment din-b-din strong hota ja raha hai.</div>
+                </div>
+            </div>
+
+            <!-- VIDEO 7 + STORY -->
+            <div class="glass-card reveal">
+                <div class="video-wrapper">
+                    <video controls playsinline muted preload="metadata">
+                        <source src="assets/media/zap7.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div style="margin-top: 16px;">
+                    <div class="story-badge">Video Reel 7</div>
+                    <h3 class="story-heading">Motion Memory 7 ❤️</h3>
+                    <div class="story-text">Aapki baatein aur expressions hamesha mere dil par raj karte hain.</div>
+                </div>
+            </div>
+
+            <!-- VIDEO 8 + STORY -->
+            <div class="glass-card reveal">
+                <div class="video-wrapper">
+                    <video controls playsinline muted preload="metadata">
+                        <source src="assets/media/zap8.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div style="margin-top: 16px;">
+                    <div class="story-badge">Video Reel 8</div>
+                    <h3 class="story-heading">Motion Memory 8 ❤️</h3>
+                    <div class="story-text">Aapki aankhon ka Magic directly mere dil ko touch karta hai.</div>
+                </div>
+            </div>
+
+            <!-- VIDEO 9 + STORY -->
+            <div class="glass-card reveal">
+                <div class="video-wrapper">
+                    <video controls playsinline muted preload="metadata">
+                        <source src="assets/media/zap9.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div style="margin-top: 16px;">
+                    <div class="story-badge">Video Reel 9</div>
+                    <h3 class="story-heading">Motion Memory 9 ❤️</h3>
+                    <div class="story-text">Aapki har ek movement kisi romantic movie se kam nahi hai mere liye.</div>
+                </div>
+            </div>
+
+            <!-- VIDEO 10 + STORY -->
+            <div class="glass-card reveal">
+                <div class="video-wrapper">
+                    <video controls playsinline muted preload="metadata">
+                        <source src="assets/media/zap10.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div style="margin-top: 16px;">
+                    <div class="story-badge">Video Reel 10</div>
+                    <h3 class="story-heading">Motion Memory 10 ❤️</h3>
+                    <div class="story-text">Ye hamara 10th special video moment hai, aur aage aane wale hazaron moments ke naam hai!</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL EMOTIONAL SCREEN -->
+        <section style="text-align: center; padding: 60px 10px;" class="reveal">
+            <div style="font-size: 5rem; margin-bottom: 20px;">💖</div>
+            <h2 style="font-family: var(--font-serif); font-size: 3.2rem; margin-bottom: 15px; color: var(--rose-gold);">You are special to me ❤️</h2>
+            <p style="color: var(--text-muted); max-width: 500px; margin: 0 auto; line-height: 1.8; font-size: 1.1rem;">
+                Apka lolipop hamesha aapke paas hai, chahe kitni bhi doori ho. Rest karna, comfortable rehna aur bilkul tension mat lena. I LOVE YOU JAANU! ❤️
+            </p>
+            <div style="margin-top: 30px; font-family: var(--font-hand); font-size: 2.2rem; color: var(--glowing-crimson);">
+                Forever & Always ❤️
+            </div>
+        </section>
+
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // 1. DARK ROMANTIC CANVAS PARTICLES (Floating subtle pink particles)
+        const canvas = document.getElementById('bgCanvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Particle {
+            constructor() { this.reset(); }
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height + canvas.height;
+                this.size = Math.random() * 2.5 + 0.8;
+                this.speedY = Math.random() * 0.7 + 0.2;
+                this.speedX = Math.random() * 0.4 - 0.2;
+                this.opacity = Math.random() * 0.4 + 0.15;
+            }
+            update() {
+                this.y -= this.speedY;
+                this.x += this.speedX;
+                if (this.y < -10) this.reset();
+            }
+            draw() {
+                ctx.fillStyle = `rgba(230, 0, 76, ${this.opacity})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+        for (let i = 0; i < 35; i++) particles.push(new Particle());
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => { p.update(); p.draw(); });
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+
+        // 2. TAP HEART BURST
+        document.addEventListener('click', (e) => {
+            const heart = document.createElement('div');
+            heart.className = 'tap-heart';
+            heart.innerHTML = '❤️';
+            heart.style.left = e.clientX + 'px';
+            heart.style.top = e.clientY + 'px';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 1000);
+        });
+
+        // 3. SCROLL REVEAL ANIMATIONS
+        const revealElements = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.08 });
+        revealElements.forEach(el => observer.observe(el));
+
+        // 4. MULTI-TRACK PLAYLIST AUTO PLAY MUSIC PLAYER
+        const playlist = [
+            { title: "Love Song 1", src: "assets/media/love-song.mp3" },
+            { title: "Love Song 2", src: "assets/media/love-song2.mp3" },
+            { title: "Love Song 3", src: "assets/media/love-song3.mp3" },
+            { title: "Love Song 4", src: "assets/media/love-song4.mp3" }
+        ];
+        let currentTrack = 0;
+        const bgMusic = document.getElementById('bgMusic');
+        const musicPlayBtn = document.getElementById('musicPlayBtn');
+        const musicTitle = document.getElementById('musicTitle');
+        const musicStatus = document.getElementById('musicStatus');
+        let isPlaying = false;
+        let audioCtx, synthInterval;
+
+        function playTrack(index) {
+            currentTrack = index % playlist.length;
+            bgMusic.src = playlist[currentTrack].src;
+            musicTitle.textContent = playlist[currentTrack].title;
+            
+            bgMusic.play().then(() => {
+                isPlaying = true;
+                musicPlayBtn.innerHTML = '⏸';
+                musicStatus.textContent = 'Playing ❤️';
+            }).catch(err => {
+                startFallbackSynth();
+                isPlaying = true;
+                musicPlayBtn.innerHTML = '⏸';
+                musicStatus.textContent = 'Playing (Chime) ❤️';
+            });
+        }
+
+        // Auto transition to next song when current finishes
+        bgMusic.addEventListener('ended', () => {
+            playTrack(currentTrack + 1);
+        });
+
+        // Web Audio Synth Fallback if local MP3 files fail
+        function startFallbackSynth() {
+            if (audioCtx) return;
+            const AudioContext = window.AudioContext || window.webkitAudioContext;
+            audioCtx = new AudioContext();
+            const notes = [220.00, 261.63, 329.63, 392.00, 440.00]; // Deep warm romantic chimes
+            let index = 0;
+            synthInterval = setInterval(() => {
+                if (!isPlaying) return;
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(notes[index % notes.length], audioCtx.currentTime);
+                gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 2.8);
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                osc.start();
+                osc.stop(audioCtx.currentTime + 2.8);
+                index++;
+            }, 1400);
+        }
+
+        function toggleMusic() {
+            if (isPlaying) {
+                bgMusic.pause();
+                isPlaying = false;
+                musicPlayBtn.innerHTML = '▶';
+                musicStatus.textContent = 'Paused';
+            } else {
+                playTrack(currentTrack);
+            }
+        }
+
+        musicPlayBtn.addEventListener('click', toggleMusic);
+
+        document.getElementById('startBtn').addEventListener('click', () => {
+            document.getElementById('mainStorySection').scrollIntoView({ behavior: 'smooth' });
+            if (!isPlaying) playTrack(0);
+        });
+
+        // 5. LIGHTBOX ZOOM FOR PHOTOS
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        document.querySelectorAll('.photo-wrapper img').forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightbox.classList.add('active');
+            });
+        });
+        document.getElementById('lightboxClose').addEventListener('click', () => lightbox.classList.remove('active'));
+        lightbox.addEventListener('click', (e) => { if(e.target === lightbox) lightbox.classList.remove('active'); });
+
+        // 6. SINGLE VIDEO PLAY CONTROL (Pause other videos when one plays)
+        const videos = document.querySelectorAll('video');
+        videos.forEach(v => {
+            v.addEventListener('play', () => {
+                videos.forEach(other => {
+                    if (other !== v) other.pause();
+                });
+            });
+        });
+    </script>
+</body>
+</html>
